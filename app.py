@@ -30,7 +30,7 @@ cursor = cnxn.cursor()
 # Check the Usera table exists in our database, if not, add it
 try:
     cursor.execute("SELECT * FROM Users")
-except pyodbc.ProgammingError:
+except pyodbc.ProgrammingError:
     cursor.execute("CREATE TABLE Users (name varchar(100), score1 int, score2 int)")
     cursor.commit()
 
